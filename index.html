@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEX — премиум фитнес-клуб в Москве | 24/7, Technogym, спа</title>
+  <meta name="description" content="APEX — премиум фитнес-клуб в Москве. 2 400 м² Technogym, 40 тренировок в неделю, спа и зона восстановления. Клуб работает 24/7 для карт APEX и BLACK.">
+  <meta name="keywords" content="фитнес-клуб Москва, премиум фитнес, Technogym, тренажёрный зал 24/7, персональный тренер, спа">
+  <meta name="theme-color" content="#0C0E0B">
+  <link rel="canonical" href="https://apex-fitness.ru/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="APEX CLUB">
+  <meta property="og:title" content="APEX — премиум фитнес-клуб в Москве | 24/7, Technogym, спа">
+  <meta property="og:description" content="2 400 м² Technogym, 40 тренировок в неделю, зона восстановления и спа. Клуб для тех, кто тренируется всерьёз.">
+  <meta property="og:image" content="assets/img/gym-neon.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:url" content="https://apex-fitness.ru/">
+
+  <!-- Favicon: lime A -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230C0E0B'/%3E%3Cpath d='M32 12 L48 52 L40 52 L36.5 42 L27.5 42 L24 52 L16 52 Z M32 24 L28.8 35 L35.2 35 Z' fill='%23C6FF3A'/%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- JSON-LD: HealthClub -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "name": "APEX",
+    "alternateName": "APEX CLUB",
+    "description": "Премиум фитнес-клуб в Москве: 2 400 м² Technogym, 40 тренировок в неделю, спа и зона восстановления. Работает 24/7 для карт APEX и BLACK.",
+    "url": "https://apex-fitness.ru/",
+    "image": "https://apex-fitness.ru/assets/img/gym-neon.jpg",
+    "telephone": "+7 (495) 640-11-88",
+    "priceRange": "4 900–14 900 ₽",
+    "currenciesAccepted": "RUB",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Правды, 24",
+      "addressLocality": "Москва",
+      "postalCode": "125124",
+      "addressCountry": "RU"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 55.7942, "longitude": 37.5926 },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "06:00",
+      "closes": "24:00"
+    }],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Technogym", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Спа и сауна", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Зона восстановления", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Парковка", "value": true }
+    ]
+  }
+  </script>
+</head>
+<body class="is-locked">
+
+  <noscript>
+    <style>
+      .preloader,.cursor-dot,.cursor-ring,.totop{display:none!important}
+      body{overflow:auto!important}
+      .js .reveal{opacity:1!important;transform:none!important}
+      .hero__line-in{transform:none!important}
+    </style>
+  </noscript>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__logo">APEX</div>
+      <p class="preloader__tag">Премиум фитнес-клуб · Москва</p>
+      <div class="preloader__line"><span id="preloaderLine"></span></div>
+    </div>
+    <div class="preloader__num"><span id="preloaderNum">0</span>%</div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo" aria-label="APEX — на главную">APEX<span class="logo__dot" aria-hidden="true"></span></a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#club">Клуб</a></li>
+          <li><a class="nav__link" href="#directions">Направления</a></li>
+          <li><a class="nav__link" href="#team">Команда</a></li>
+          <li><a class="nav__link" href="#pricing">Тарифы</a></li>
+          <li><a class="nav__link" href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#trial" class="btn btn--lime btn--sm magnetic">Пробное занятие</a>
+        <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile fullscreen menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Мобильная навигация">
+      <ul class="mobile-menu__list">
+        <li><a class="mobile-menu__link" href="#club"><i>01</i>Клуб</a></li>
+        <li><a class="mobile-menu__link" href="#directions"><i>02</i>Направления</a></li>
+        <li><a class="mobile-menu__link" href="#team"><i>03</i>Команда</a></li>
+        <li><a class="mobile-menu__link" href="#pricing"><i>04</i>Тарифы</a></li>
+        <li><a class="mobile-menu__link" href="#contacts"><i>05</i>Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu__footer">
+      <a class="mobile-menu__phone" href="tel:+74956401188">+7 (495) 640-11-88</a>
+      <p>Москва, ул. Правды, 24 · ежедневно 06:00–24:00</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__media">
+        <video class="hero__video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg" tabindex="-1">
+          <source src="assets/video/hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero__fallback" aria-hidden="true"></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="container hero__content">
+        <p class="hero__kicker">Премиум фитнес-клуб · Москва · 24/7</p>
+        <h1 class="hero__title">
+          <span class="hero__line"><span class="hero__line-in">Слабых мест</span></span>
+          <span class="hero__line"><span class="hero__line-in"><em class="lime">не</em> остаётся</span></span>
+        </h1>
+        <p class="hero__sub">2 400 м² Technogym, 40 тренировок в неделю, зона восстановления и спа. Клуб для тех, кто тренируется всерьёз.</p>
+        <div class="hero__cta">
+          <a href="#pricing" class="btn btn--lime magnetic">Купить карту</a>
+          <a href="#trial" class="btn btn--ghost magnetic">Пробное занятие</a>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true"><span>Скролл</span><i></i></div>
+
+      <!-- Marquee -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <div class="marquee__group">
+            <span>Technogym</span><b>—</b><span>Sauna</span><b>—</b><span>Recovery Zone</span><b>—</b><span>24/7</span><b>—</b><span>Personal Coaching</span><b>—</b>
+          </div>
+          <div class="marquee__group">
+            <span>Technogym</span><b>—</b><span>Sauna</span><b>—</b><span>Recovery Zone</span><b>—</b><span>24/7</span><b>—</b><span>Personal Coaching</span><b>—</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats section" id="stats" aria-label="Клуб в цифрах">
+      <div class="container">
+        <ul class="stats__grid">
+          <li class="stats__item reveal">
+            <div class="stats__num"><span class="stats__counter" data-count="2400">0</span><span class="stats__unit">м²</span></div>
+            <p class="stats__label">площадь клуба — три уровня под одной крышей</p>
+          </li>
+          <li class="stats__item reveal" data-delay="100">
+            <div class="stats__num"><span class="stats__counter" data-count="120">0</span></div>
+            <p class="stats__label">тренажёров Technogym последнего поколения</p>
+          </li>
+          <li class="stats__item reveal" data-delay="200">
+            <div class="stats__num"><span class="stats__counter" data-count="40">0</span></div>
+            <p class="stats__label">тренеров: мастера спорта, КМС и нутрициологи</p>
+          </li>
+          <li class="stats__item reveal" data-delay="300">
+            <div class="stats__num"><span class="stats__counter" data-count="24">0</span><span class="stats__unit">/7</span></div>
+            <p class="stats__label">доступ для держателей карт APEX и BLACK</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CLUB ============ -->
+    <section class="club section" id="club">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__index">01 <i>/</i> Клуб</span>
+          <h2 class="section-head__title">Зал, в котором <span class="lime">хочется жить</span></h2>
+        </header>
+
+        <div class="club__grid">
+          <figure class="club__media reveal">
+            <div class="parallax" data-parallax="0.1">
+              <img src="assets/img/gym-neon.jpg" alt="Главный зал APEX с неоновой подсветкой — 2 400 м² премиального пространства" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Главный зал · 2 400 м² · 3 уровня</figcaption>
+          </figure>
+
+          <div class="club__body reveal" data-delay="150">
+            <p class="club__lead">Мы построили клуб, в который хочется приходить раньше и уходить позже. Каждая деталь — от звука до воздуха — работает на тренировку, а не отвлекает от неё.</p>
+            <ul class="club__features">
+              <li>
+                <h3>Звук</h3>
+                <p>Аудиосистема Bose Pro, шесть независимых зон звучания — свой ритм в каждой зоне без каши из чужой музыки.</p>
+              </li>
+              <li>
+                <h3>Свет</h3>
+                <p>Динамические сценарии освещения: холодный и жёсткий на силовой, тёплый и мягкий в студии йоги и спа.</p>
+              </li>
+              <li>
+                <h3>Воздух</h3>
+                <p>Приточно-вытяжная вентиляция премиум-класса с кратностью обмена ×4 — даже в час пик дышится легко.</p>
+              </li>
+            </ul>
+            <a href="#directions" class="link-more">Смотреть направления<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <div class="club__row">
+          <figure class="club__mini club__mini--wide reveal">
+            <div class="parallax" data-parallax="0.14">
+              <img src="assets/img/gear-dark.jpg" alt="Тёмная раскладка профессионального инвентаря клуба APEX" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Железо без компромиссов</figcaption>
+          </figure>
+          <figure class="club__mini reveal" data-delay="150">
+            <div class="parallax" data-parallax="0.14">
+              <img src="assets/img/gym-gold.jpg" alt="Премиальная зона отдыха клуба APEX с тёплой подсветкой" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Зоны премиум-класса</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DIRECTIONS (TABS) ============ -->
+    <section class="dir section" id="directions">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__index">02 <i>/</i> Направления</span>
+          <h2 class="section-head__title">Пять зон. <span class="lime">Одна цель.</span></h2>
+        </header>
+
+        <div class="dir__wrap reveal" id="dirTabs">
+          <div class="dir__tabs" role="tablist" aria-label="Направления тренировок">
+            <button class="dir__tab is-active" type="button" role="tab" aria-selected="true" data-tab="strength"><i>01</i><span>Силовой блок</span></button>
+            <button class="dir__tab" type="button" role="tab" aria-selected="false" data-tab="cardio"><i>02</i><span>Кардио-зона</span></button>
+            <button class="dir__tab" type="button" role="tab" aria-selected="false" data-tab="group"><i>03</i><span>Групповые</span></button>
+            <button class="dir__tab" type="button" role="tab" aria-selected="false" data-tab="fight"><i>04</i><span>Единоборства</span></button>
+            <button class="dir__tab" type="button" role="tab" aria-selected="false" data-tab="recovery"><i>05</i><span>Восстановление</span></button>
+          </div>
+
+          <div class="dir__panels">
+            <!-- 01 Силовой блок -->
+            <article class="dir__panel is-active" data-panel="strength" role="tabpanel">
+              <div class="dir__media"><img src="assets/img/training-1.jpg" alt="Атлет APEX выполняет тягу штанги в силовом блоке" loading="lazy" decoding="async"></div>
+              <div class="dir__body">
+                <p class="dir__num">01</p>
+                <h3 class="dir__title">Силовой блок</h3>
+                <p class="dir__text">Свободные веса, силовые рамки и помосты. Всё железо — Technogym и Eleiko: от гантелей 2 кг до олимпийских грифов. Здесь ставят личные рекорды — и мы к этому всё и строили.</p>
+                <ul class="dir__list">
+                  <li>12 силовых рамок и 2 помоста</li>
+                  <li>Гантели 2–60 кг, полный ряд</li>
+                  <li>Дежурный тренер в зоне всегда</li>
+                  <li>Меламинные диски Eleiko</li>
+                </ul>
+                <div class="dir__metrics">
+                  <div class="dir__metric"><b>700</b><span>м² площади</span></div>
+                  <div class="dir__metric"><b>64</b><span>тренажёра</span></div>
+                  <div class="dir__metric"><b>18</b><span>занятий в неделю</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 02 Кардио-зона -->
+            <article class="dir__panel" data-panel="cardio" role="tabpanel">
+              <div class="dir__media"><img src="assets/img/training-2.jpg" alt="Атлет выполняет переноску веса на функциональной тренировке в APEX" loading="lazy" decoding="async"></div>
+              <div class="dir__body">
+                <p class="dir__num">02</p>
+                <h3 class="dir__title">Кардио-зона</h3>
+                <p class="dir__text">Беговые дорожки Skillrun, эллипсы, гребные и assault bike последнего поколения — с индивидуальными экранами и панорамным видом на город. Кардио, за которое не приходится себя заставлять.</p>
+                <ul class="dir__list">
+                  <li>24 беговые дорожки Skillrun</li>
+                  <li>Гребные тренажёры Skillrow</li>
+                  <li>Ассолт-байки и велозал</li>
+                  <li>Панорамные окна на 12 метров</li>
+                </ul>
+                <div class="dir__metrics">
+                  <div class="dir__metric"><b>420</b><span>м² площади</span></div>
+                  <div class="dir__metric"><b>38</b><span>тренажёра</span></div>
+                  <div class="dir__metric"><b>12</b><span>программ в неделю</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 03 Групповые -->
+            <article class="dir__panel" data-panel="group" role="tabpanel">
+              <div class="dir__media"><img src="assets/img/gym-gold.jpg" alt="Групповая студия APEX с премиальной отделкой" loading="lazy" decoding="async"></div>
+              <div class="dir__body">
+                <p class="dir__num">03</p>
+                <h3 class="dir__title">Групповые</h3>
+                <p class="dir__text">Более 40 занятий в неделю: HIIT, сайкл, функциональный тренинг, йога и пилатес. Два зала с амортизирующим полом, профессиональной акустикой и иммерсивным светом.</p>
+                <ul class="dir__list">
+                  <li>40+ занятий каждую неделю</li>
+                  <li>Сайкл-студия с RGB-светом</li>
+                  <li>Запись через приложение клуба</li>
+                  <li>Группы до 16 человек</li>
+                </ul>
+                <div class="dir__metrics">
+                  <div class="dir__metric"><b>320</b><span>м² площади</span></div>
+                  <div class="dir__metric"><b>2</b><span>зала</span></div>
+                  <div class="dir__metric"><b>40+</b><span>занятий в неделю</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 04 Единоборства -->
+            <article class="dir__panel" data-panel="fight" role="tabpanel">
+              <div class="dir__media"><img src="assets/img/training-bw.jpg" alt="Работа со штангой крупным планом — чёрно-белый кадр из зала APEX" loading="lazy" decoding="async"></div>
+              <div class="dir__body">
+                <p class="dir__num">04</p>
+                <h3 class="dir__title">Единоборства</h3>
+                <p class="dir__text">Профессиональный ринг, татами 120 м² и зона мешков. Бокс, кикбоксинг, ММА и грэпплинг — от базовой техники до спаррингов по выходным.</p>
+                <ul class="dir__list">
+                  <li>Ринг 5×5 м с профессиональным настилом</li>
+                  <li>Татами 120 м², дзюдо и грэпплинг</li>
+                  <li>16 мешков и груш</li>
+                  <li>Спарринг-вечера по субботам</li>
+                </ul>
+                <div class="dir__metrics">
+                  <div class="dir__metric"><b>260</b><span>м² площади</span></div>
+                  <div class="dir__metric"><b>16</b><span>мешков и груш</span></div>
+                  <div class="dir__metric"><b>14</b><span>занятий в неделю</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 05 Восстановление -->
+            <article class="dir__panel" data-panel="recovery" role="tabpanel">
+              <div class="dir__media"><img src="assets/img/gear-dark.jpg" alt="Зона восстановления APEX — тёмная премиальная атмосфера" loading="lazy" decoding="async"></div>
+              <div class="dir__body">
+                <p class="dir__num">05</p>
+                <h3 class="dir__title">Восстановление</h3>
+                <p class="dir__text">Спа, сауна, хаммам и зона relaxation. Восстановление — часть тренировочного процесса, а не бонус. Здесь мышцы растут, а результаты закрепляются.</p>
+                <ul class="dir__list">
+                  <li>Сауна и хаммам</li>
+                  <li>Массажные кабинеты</li>
+                  <li>Ледяная купель и контрастный душ</li>
+                  <li>Зона relaxation с травяным чаем</li>
+                </ul>
+                <div class="dir__metrics">
+                  <div class="dir__metric"><b>380</b><span>м² площади</span></div>
+                  <div class="dir__metric"><b>8</b><span>спа-кабинетов</span></div>
+                  <div class="dir__metric"><b>7</b><span>дней в неделю</span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TEAM ============ -->
+    <section class="team section" id="team">
+      <span class="bg-word" aria-hidden="true">КОМАНДА</span>
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__index">03 <i>/</i> Команда</span>
+          <h2 class="section-head__title">Тренеры, которые <span class="lime">ведут к результату</span></h2>
+        </header>
+
+        <div class="team__grid">
+          <article class="coach reveal" data-tilt>
+            <div class="coach__media">
+              <img src="assets/img/trainer-1.jpg" alt="Кирилл Стрелецкий — силовой тренер клуба APEX" loading="lazy" decoding="async">
+            </div>
+            <div class="coach__body">
+              <h3 class="coach__name">Кирилл Стрелецкий</h3>
+              <p class="coach__role">Силовой тренер</p>
+              <ul class="coach__tags">
+                <li>Мастер спорта</li>
+                <li>11 лет опыта</li>
+                <li>Пауэрлифтинг</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="coach reveal" data-delay="150" data-tilt>
+            <div class="coach__media">
+              <img src="assets/img/trainer-2.jpg" alt="Дамир Хакимов — персональный тренер и нутрициолог клуба APEX" loading="lazy" decoding="async">
+            </div>
+            <div class="coach__body">
+              <h3 class="coach__name">Дамир Хакимов</h3>
+              <p class="coach__role">Персональный тренинг</p>
+              <ul class="coach__tags">
+                <li>Нутрициолог</li>
+                <li>8 лет опыта</li>
+                <li>Жиросжигание · масса</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="team__more reveal">
+          <span class="team__more-num">+38</span>
+          <p class="team__more-text">тренеров команды — от сайкла до грэпплинга.<br>Познакомимся на первом занятии.</p>
+          <a href="#trial" class="link-more">Записаться на тренировку<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="pricing section" id="pricing">
+      <span class="bg-word" aria-hidden="true">КАРТЫ</span>
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__index">04 <i>/</i> Тарифы</span>
+          <h2 class="section-head__title">Карты клуба</h2>
+        </header>
+
+        <div class="billing reveal" id="billing" data-state="month">
+          <span class="billing__thumb" aria-hidden="true"></span>
+          <button class="billing__btn is-active" type="button" data-billing="month">Месяц</button>
+          <button class="billing__btn" type="button" data-billing="year">Год <em>−20%</em></button>
+        </div>
+
+        <div class="pricing__grid">
+          <!-- БАЗА -->
+          <article class="plan reveal">
+            <header class="plan__head">
+              <h3 class="plan__name">База</h3>
+              <p class="plan__sub">дневной формат</p>
+            </header>
+            <div class="plan__price">
+              <span class="plan__value" data-monthly="4900" data-yearly="47040">4 900</span>
+              <span class="plan__cur">₽</span>
+            </div>
+            <p class="plan__period">в месяц</p>
+            <ul class="plan__list">
+              <li>Дневной доступ 08:00–17:00</li>
+              <li>Кардио-зона и силовой блок</li>
+              <li>Индивидуальный шкафчик</li>
+            </ul>
+            <button class="btn btn--ghost plan__btn" type="button" data-tariff="БАЗА">Оформить</button>
+          </article>
+
+          <!-- APEX -->
+          <article class="plan plan--featured reveal" data-delay="120">
+            <span class="plan__badge">Выбор клиентов</span>
+            <header class="plan__head">
+              <h3 class="plan__name">Apex</h3>
+              <p class="plan__sub">без ограничений</p>
+            </header>
+            <div class="plan__price">
+              <span class="plan__value" data-monthly="8900" data-yearly="85440">8 900</span>
+              <span class="plan__cur">₽</span>
+            </div>
+            <p class="plan__period">в месяц</p>
+            <ul class="plan__list">
+              <li>Доступ 24/7</li>
+              <li>Все зоны клуба</li>
+              <li>Групповые — 40+ в неделю</li>
+              <li>Гостевые визиты — 2 в месяц</li>
+            </ul>
+            <button class="btn btn--lime plan__btn" type="button" data-tariff="APEX">Оформить</button>
+          </article>
+
+          <!-- BLACK -->
+          <article class="plan reveal" data-delay="240">
+            <header class="plan__head">
+              <h3 class="plan__name">Black</h3>
+              <p class="plan__sub">максимум APEX</p>
+            </header>
+            <div class="plan__price">
+              <span class="plan__value" data-monthly="14900" data-yearly="143040">14 900</span>
+              <span class="plan__cur">₽</span>
+            </div>
+            <p class="plan__period">в месяц</p>
+            <ul class="plan__list">
+              <li>Всё из карты APEX</li>
+              <li>Спа и зона восстановления</li>
+              <li>4 персональные тренировки в месяц</li>
+              <li>Парковка в клубе</li>
+            </ul>
+            <button class="btn btn--line plan__btn" type="button" data-tariff="BLACK">Оформить</button>
+          </article>
+        </div>
+
+        <p class="pricing__note reveal">Все карты включают мобильное приложение, замер состава тела и вводный инструктаж. Заморозка — до 30 дней в год.</p>
+      </div>
+    </section>
+
+    <!-- ============ SCHEDULE ============ -->
+    <section class="schedule section" id="schedule">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__index">05 <i>/</i> Расписание</span>
+          <h2 class="section-head__title">Занятия <span class="lime">недели</span></h2>
+        </header>
+
+        <div class="sched reveal" id="sched">
+          <div class="sched__tabs" role="tablist" aria-label="Дни недели">
+            <button class="sched__tab is-active" type="button" role="tab" aria-selected="true" data-tab="mon">Пн</button>
+            <button class="sched__tab" type="button" role="tab" aria-selected="false" data-tab="tue">Вт</button>
+            <button class="sched__tab" type="button" role="tab" aria-selected="false" data-tab="wed">Ср</button>
+            <button class="sched__tab" type="button" role="tab" aria-selected="false" data-tab="thu">Чт</button>
+            <button class="sched__tab" type="button" role="tab" aria-selected="false" data-tab="fri">Пт</button>
+            <button class="sched__tab" type="button" role="tab" aria-selected="false" data-tab="sat">Сб</button>
+            <button class="sched__tab" type="button" role="tab" aria-selected="false" data-tab="sun">Вс</button>
+          </div>
+
+          <div class="sched__panels">
+            <!-- Пн -->
+            <div class="sched__panel is-active" data-panel="mon" role="tabpanel">
+              <p class="sched__day">Понедельник · 6 занятий</p>
+              <div class="sched__head"><span>Время</span><span>Занятие</span><span>Тренер</span><span>Зал</span></div>
+              <div class="sched__row"><span class="sched__time">07:00</span><span class="sched__name">CrossFit Start</span><span class="sched__coach">Антон Ковалёв</span><span class="sched__hall">Функциональный зал</span></div>
+              <div class="sched__row"><span class="sched__time">09:30</span><span class="sched__name">Сайкл Intense</span><span class="sched__coach">Марина Гончарова</span><span class="sched__hall">Сайкл-студия</span></div>
+              <div class="sched__row"><span class="sched__time">12:00</span><span class="sched__name">Силовой час</span><span class="sched__coach">Илья Северов</span><span class="sched__hall">Силовой блок</span></div>
+              <div class="sched__row"><span class="sched__time">18:00</span><span class="sched__name">HIIT 45</span><span class="sched__coach">Дана Ершова</span><span class="sched__hall">Функциональный зал</span></div>
+              <div class="sched__row"><span class="sched__time">19:30</span><span class="sched__name">Бокс: база</span><span class="sched__coach">Пётр Ланской</span><span class="sched__hall">Ринг-зона</span></div>
+              <div class="sched__row"><span class="sched__time">21:00</span><span class="sched__name">Йога Restore</span><span class="sched__coach">Дана Ершова</span><span class="sched__hall">Студия йоги</span></div>
+            </div>
+
+            <!-- Вт -->
+            <div class="sched__panel" data-panel="tue" role="tabpanel">
+              <p class="sched__day">Вторник · 4 занятия</p>
+              <div class="sched__head"><span>Время</span><span>Занятие</span><span>Тренер</span><span>Зал</span></div>
+              <div class="sched__row"><span class="sched__time">08:00</span><span class="sched__name">Пилатес</span><span class="sched__coach">Дана Ершова</span><span class="sched__hall">Студия йоги</span></div>
+              <div class="sched__row"><span class="sched__time">11:00</span><span class="sched__name">TRX Circuit</span><span class="sched__coach">Пётр Ланской</span><span class="sched__hall">Функциональный зал</span></div>
+              <div class="sched__row"><span class="sched__time">18:30</span><span class="sched__name">Сайкл Power</span><span class="sched__coach">Марина Гончарова</span><span class="sched__hall">Сайкл-студия</span></div>
+              <div class="sched__row"><span class="sched__time">20:00</span><span class="sched__name">ММА Mixfight</span><span class="sched__coach">Илья Северов</span><span class="sched__hall">Зал единоборств</span></div>
+            </div>
+
+            <!-- Ср -->
+            <div class="sched__panel" data-panel="wed" role="tabpanel">
+              <p class="sched__day">Среда · 6 занятий</p>
+              <div class="sched__head"><span>Время</span><span>Занятие</span><span>Тренер</span><span>Зал</span></div>
+              <div class="sched__row"><span class="sched__time">07:00</span><span class="sched__name">HIIT 45</span><span class="sched__coach">Пётр Ланской</span><span class="sched__hall">Функциональный зал</span></div>
+              <div class="sched__row"><span class="sched__time">10:00</span><span class="sched__name">Силовой час</span><span class="sched__coach">Антон Ковалёв</span><span class="sched__hall">Силовой блок</span></div>
+              <div class="sched__row"><span class="sched__time">13:00</span><span class="sched__name">Stretch &amp; Mobility</span><span class="sched__coach">Дана Ершова</span><span class="sched__hall">Студия йоги</span></div>
+              <div class="sched__row"><span class="sched__time">18:00</span><span class="sched__name">CrossFit Start</span><span class="sched__coach">Антон Ковалёв</span><span class="sched__hall">Функциональный зал</span></div>
+              <div class="sched__row"><span class="sched__time">19:30</span><span class="sched__name">Бокс: продвинутый</span><span class="sched__coach">Илья Северов</span><span class="sched__hall">Ринг-зона</span></div>
+              <div class="sched__row"><span class="sched__time">21:00</span><span class="sched__name">Йога Restore</span><span class="sched__coach">Марина Гончарова</span><span class="sched__hall">Студия йоги</span></div>
+            </div>
+
+            <!-- Чт -->
+            <div class="sched__panel" data-panel="thu" role="tabpanel">
+              <p class="sched__day">Четверг · 4 занятия</p>
+              <div class="sched__head"><span>Время</span><span>Занятие</span><span>Тренер</span><span>Зал</span></div>
+              <div class="sched__row"><span class="sched__time">08:00</span><span class="sched__name">Сайкл Intense</span><span class="sched__coach">Марина Гончарова</span><span class="sched__hall">Сайкл-студия</span></div>
+              <div class="sched__row"><span class="sched__time">12:00</span><span class="sched__name">TRX Circuit</span><span class="sched__coach">Дана Ершова</span><span class="sched__hall">Функциональный зал</span></div>
+              <div class="sched__row"><span class="sched__time">18:30</span><span class="sched__name">Силовой час</span><span class="sched__coach">Пётр Ланской</span><span class="sched__hall">Силовой блок</span></div>
+              <div class="sched__row"><span class="sched__time">20:00</span><span class="sched__name">Грэпплинг</span><span class="sched__coach">Илья Северов</span><span class="sched__hall">Зал единоборств</span></div>
+            </div>
+
+            <!-- Пт -->
+            <div class="sched__panel" data-panel="fri" role="tabpanel">
+              <p class="sched__day">Пятница · 6 занятий</p>
+              <div class="sched__head"><span>Время</span><span>Занятие</span><span>Тренер</span><span>Зал</span></div>
+              <div class="sched__row"><span class="sched__time">07:00</span><span class="sched__name">CrossFit Start</span><span class="sched__coach">Пётр Ланской</span><span class="sched__hall">Функциональный зал</span></div>
+              <div class="sched__row"><span class="sched__time">09:30</span><span class="sched__name">Сайкл Power</span><span class="sched__coach">Марина Гончарова</span><span class="sched__hall">Сайкл-студия</span></div>
+              <div class="sched__row"><span class="sched__time">12:00</span><span class="sched__name">HIIT 45</span><span class="sched__coach">Дана Ершова</span><span class="sched__hall">Функциональный зал</span></div>
+              <div class="sched__row"><span class="sched__time">18:00</span><span class="sched__name">Силовой час</span><span class="sched__coach">Антон Ковалёв</span><span class="sched__hall">Силовой блок</span></div>
+              <div class="sched__row"><span class="sched__time">19:30</span><span class="sched__name">Бокс: спарринг</span><span class="sched__coach">Илья Северов</span><span class="sched__hall">Ринг-зона</span></div>
+              <div class="sched__row"><span class="sched__time">21:00</span><span class="sched__name">Йога Flow</span><span class="sched__coach">Дана Ершова</span><span class="sched__hall">Студия йоги</span></div>
+            </div>
+
+            <!-- Сб -->
+            <div class="sched__panel" data-panel="sat" role="tabpanel">
+              <p class="sched__day">Суббота · 4 занятия</p>
+              <div class="sched__head"><span>Время</span><span>Занятие</span><span>Тренер</span><span>Зал</span></div>
+              <div class="sched__row"><span class="sched__time">10:00</span><span class="sched__name">Сайкл Intense</span><span class="sched__coach">Марина Гончарова</span><span class="sched__hall">Сайкл-студия</span></div>
+              <div class="sched__row"><span class="sched__time">12:00</span><span class="sched__name">CrossFit Team WOD</span><span class="sched__coach">Антон Ковалёв</span><span class="sched__hall">Функциональный зал</span></div>
+              <div class="sched__row"><span class="sched__time">16:00</span><span class="sched__name">ММА Mixfight</span><span class="sched__coach">Илья Северов</span><span class="sched__hall">Зал единоборств</span></div>
+              <div class="sched__row"><span class="sched__time">18:00</span><span class="sched__name">Йога Restore</span><span class="sched__coach">Дана Ершова</span><span class="sched__hall">Студия йоги</span></div>
+            </div>
+
+            <!-- Вс -->
+            <div class="sched__panel" data-panel="sun" role="tabpanel">
+              <p class="sched__day">Воскресенье · 4 занятия</p>
+              <div class="sched__head"><span>Время</span><span>Занятие</span><span>Тренер</span><span>Зал</span></div>
+              <div class="sched__row"><span class="sched__time">11:00</span><span class="sched__name">Stretch &amp; Mobility</span><span class="sched__coach">Дана Ершова</span><span class="sched__hall">Студия йоги</span></div>
+              <div class="sched__row"><span class="sched__time">13:00</span><span class="sched__name">Силовой час</span><span class="sched__coach">Пётр Ланской</span><span class="sched__hall">Силовой блок</span></div>
+              <div class="sched__row"><span class="sched__time">17:00</span><span class="sched__name">Сайкл Chill</span><span class="sched__coach">Марина Гончарова</span><span class="sched__hall">Сайкл-студия</span></div>
+              <div class="sched__row"><span class="sched__time">19:00</span><span class="sched__name">Бокс: база</span><span class="sched__coach">Пётр Ланской</span><span class="sched__hall">Ринг-зона</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__index">06 <i>/</i> Отзывы</span>
+          <h2 class="section-head__title">Голосуют <span class="lime">результатом</span></h2>
+        </header>
+
+        <div class="slider reveal" id="reviewsSlider">
+          <div class="slider__viewport">
+            <div class="slider__track">
+              <figure class="review">
+                <div class="review__stars" aria-label="Оценка 5 из 5">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                </div>
+                <blockquote class="review__quote">«−18 кг за полгода. Персональные тренировки с Дамиром и режим — вот и весь секрет. В APEX не хочется пропускать: атмосфера заряжает с порога.»</blockquote>
+                <figcaption class="review__author"><b>Анна С.</b><span>тариф APEX · с нами 1,5 года</span></figcaption>
+              </figure>
+
+              <figure class="review">
+                <div class="review__stars" aria-label="Оценка 5 из 5">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                </div>
+                <blockquote class="review__quote">«Лучший тренажёрный парк из тех, что я видел в Москве. Technogym последнего поколения, вечером всегда свободны рамки. А после сауны — как новорождённый.»</blockquote>
+                <figcaption class="review__author"><b>Максим Т.</b><span>тариф BLACK · с нами 2 года</span></figcaption>
+              </figure>
+
+              <figure class="review">
+                <div class="review__stars" aria-label="Оценка 5 из 5">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                </div>
+                <blockquote class="review__quote">«Хожу на групповые почти каждый день. 40 занятий в неделю — реально есть из чего выбрать в любое время. Отдельное спасибо за сайкл-студию и свет.»</blockquote>
+                <figcaption class="review__author"><b>Полина Ж.</b><span>тариф APEX · с нами 1 год</span></figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="slider__nav">
+            <button class="slider__arrow" type="button" data-dir="prev" aria-label="Предыдущий отзыв">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+            </button>
+            <div class="slider__dots" role="tablist" aria-label="Навигация по отзывам"></div>
+            <button class="slider__arrow" type="button" data-dir="next" aria-label="Следующий отзыв">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRIAL FORM ============ -->
+    <section class="trial section" id="trial">
+      <div class="container trial__grid">
+        <div class="trial__info reveal">
+          <span class="section-head__index">07 <i>/</i> Контакты</span>
+          <h2 class="section-head__title">Первое занятие — <span class="lime">за нами</span></h2>
+          <p class="trial__lead">Оставьте заявку — администратор перезвонит в течение 15 минут, подберёт тренера и удобное время.</p>
+
+          <address class="trial__contacts" id="contacts">
+            <div class="trial__contact">
+              <h3>Адрес</h3>
+              <p>Москва, ул. Правды, 24<br><span class="trial__meta">м. Белорусская · 7 минут пешком</span></p>
+            </div>
+            <div class="trial__contact">
+              <h3>Телефон</h3>
+              <p><a href="tel:+74956401188">+7 (495) 640-11-88</a><br><a class="trial__meta" href="tel:+74956401188">ежедневно с 06:00</a></p>
+            </div>
+            <div class="trial__contact">
+              <h3>Часы работы</h3>
+              <p>Ежедневно 06:00–24:00<br><span class="trial__meta">клуб 24/7 для карт APEX и BLACK</span></p>
+            </div>
+          </address>
+
+          <div class="trial__map" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>ул. Правды, 24 · вход с торца здания</span>
+          </div>
+        </div>
+
+        <div class="trial__formwrap reveal" data-delay="150">
+          <form class="form" id="trialForm" novalidate>
+            <div class="field">
+              <label for="fName">Имя</label>
+              <input type="text" id="fName" name="name" placeholder="Ваше имя" autocomplete="name" required>
+              <span class="field__error">Введите имя (минимум 2 символа)</span>
+            </div>
+            <div class="field">
+              <label for="fPhone">Телефон</label>
+              <input type="tel" id="fPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+              <span class="field__error">Введите номер полностью</span>
+            </div>
+            <div class="field">
+              <label for="fDir">Направление</label>
+              <select id="fDir" name="direction">
+                <option value="Силовой блок" selected>Силовой блок</option>
+                <option value="Кардио-зона">Кардио-зона</option>
+                <option value="Групповые">Групповые</option>
+                <option value="Единоборства">Единоборства</option>
+                <option value="Восстановление">Восстановление</option>
+                <option value="Персональный тренинг">Персональный тренинг</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fTariff">Тариф</label>
+              <select id="fTariff" name="tariff">
+                <option value="" selected>Пока не выбрал</option>
+                <option value="БАЗА">БАЗА — 4 900 ₽/мес</option>
+                <option value="APEX">APEX — 8 900 ₽/мес</option>
+                <option value="BLACK">BLACK — 14 900 ₽/мес</option>
+              </select>
+            </div>
+            <button class="btn btn--lime btn--full magnetic" type="submit">Записаться на пробное</button>
+            <p class="form__note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</p>
+          </form>
+
+          <div class="form-success" id="formSuccess" hidden>
+            <svg viewBox="0 0 52 52" width="64" height="64" aria-hidden="true"><circle class="form-success__circle" cx="26" cy="26" r="24" fill="none"/><path class="form-success__check" fill="none" d="M14 27l8 8 16-17"/></svg>
+            <h3>Заявка принята.</h3>
+            <p>Ждём вас на тренировке!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="#hero" class="footer__logo" aria-label="APEX — наверх">APEX<span aria-hidden="true"></span></a>
+        <nav class="footer__nav" aria-label="Навигация в подвале">
+          <ul>
+            <li><a href="#club">Клуб</a></li>
+            <li><a href="#directions">Направления</a></li>
+            <li><a href="#team">Команда</a></li>
+            <li><a href="#pricing">Тарифы</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="footer__social">
+          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M21.9 4.6c.3-1.4-.8-2-1.9-1.6L2.7 9.9c-1.3.5-1.3 1.4-.2 1.7l4.5 1.4 10.5-6.6c.5-.3.9-.1.6.2l-8.5 7.7-.3 4.6c.5 0 .7-.2 1-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3-13.3z"/></svg>
+          </a>
+          <a href="https://vk.com/" target="_blank" rel="noopener" aria-label="ВКонтакте">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M13 18.5c-6.2 0-9.7-4.3-9.9-11.4h3.1c.1 5.3 2.4 7.5 4.3 8V7.1h2.9v4.6c1.8-.2 3.7-2.3 4.4-4.6h2.9c-.5 2.8-2.6 4.9-4 5.8 1.5.7 3.8 2.5 4.7 5.6h-3.2c-.7-2.1-2.4-3.8-4.8-4v4h-.4z"/></svg>
+          </a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.9 4.8 12 4.8 12 4.8s-6.9 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.1 12c0 1.6.1 3.2.4 4.8a2.8 2.8 0 0 0 2 2c1.6.4 8.5.4 8.5.4s6.9 0 8.5-.4a2.8 2.8 0 0 0 2-2c.3-1.6.4-3.2.4-4.8s-.1-3.2-.4-4.8zM9.8 15.3V8.7l5.8 3.3-5.8 3.3z"/></svg>
+          </a>
+          <a href="https://dzen.ru/" target="_blank" rel="noopener" aria-label="Дзен">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 1a11 11 0 0 0 0 22 11 11 0 0 0 0-22zm4.9 12h-3.9v3.9h-2V13H7.1v-2H11V7.1h2V11h3.9v2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 APEX CLUB · Разработка: Kwork Premium</p>
+        <p class="footer__meta">Москва, ул. Правды, 24 · +7 (495) 640-11-88</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="totop" id="toTop" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
